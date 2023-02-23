@@ -8,12 +8,13 @@
 
 # Output:
  Output will print the final position of the rover along with its direction with the format "positionX,positionY,direction".
- Sample output for the given instruction sequence: "1,4,WEST".
+ Sample output for the given instruction sequence ("FFRFLFLF"): "1,4,WEST".
 
 # Requirements:
- .NET 6 or an online c# compiler
- Online compiler:
- https://www.programiz.com/csharp-programming/online-compiler/
+ .NET 6 or Replit (online compilation)
+ Replit:
+ https://replit.com/@SavioFernandes7/codectest#Program.cs
+ 
  Download .NET 6:
  https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 
