@@ -21,9 +21,12 @@
             for (int i = 0; i < commandString.Length; i++)
             {
                 Result current = Move.MoveRover(finalResult.positionX, finalResult.positionY, plateauSize, finalResult.direction, commandString[i]);
-                finalResult.direction = current.direction;
-                finalResult.positionX = current.positionX;
-                finalResult.positionY = current.positionY;
+                if (current != null)
+                {
+                    finalResult.direction = current.direction;
+                    finalResult.positionX = current.positionX;
+                    finalResult.positionY = current.positionY;
+                }
             }
 
             Console.WriteLine($"Result: {finalResult.positionX + 1},{finalResult.positionY + 1},{finalResult.direction}");

@@ -1,14 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace codec_test
 {
-
     public static class Move
     {
-
         public static Result MoveRover(ulong positionX, ulong positionY, ulong plateauSize, Direction direction, char command)
         {
             if (!command.Equals('F'))
@@ -23,25 +16,49 @@ namespace codec_test
                 else
                     Console.WriteLine("Invalid input. Skipping ...");
 
-            Console.WriteLine($"Rover rotated and is now facing {direction}");
+            Console.WriteLine($"Rover is now facing {direction}");
 
 
             //check whether moving forward will take rover off the map
-            if (positionX == 0 && direction == Direction.WEST && command.Equals('F'))
+            if (command.Equals('F'))
             {
-                return null;
-            }
-            if (positionY == 0 && direction == Direction.SOUTH && command.Equals('F'))
-            {
-                return null;
-            }
-            if (positionX == plateauSize && direction == Direction.EAST && command.Equals('F'))
-            {
-                return null;
-            }
-            if (positionY == plateauSize && direction == Direction.NORTH && command.Equals('F'))
-            {
-                return null;
+                //first check corners then check edges
+                //position 1,1
+                if (positionX == 0 && positionY == 0 && (direction == Direction.WEST || direction == Direction.SOUTH))
+                {
+                    return null;//return object with same position
+                }
+                // position plateauSize, plateauSize
+                if (positionX == (plateauSize - 1) && positionY == (plateauSize - 1) && (direction == Direction.EAST || direction == Direction.NORTH))
+                {
+                    return null;//return object with same position
+                }
+                //checking left edges
+                if (positionY == 0 && direction == Direction.SOUTH)
+                {
+                    return null;//return object with same position
+                }
+                if (positionY == (plateauSize - 1) && direction == Direction.NORTH)
+                {
+                    return null;//return object with same position
+                }
+                if (positionX == 0 && direction == Direction.WEST)
+                {
+                    return null;
+                }
+                if (positionX == (plateauSize - 1) && direction == Direction.EAST)
+                {
+                    return null;
+                }
+
+                //moveForward
+                switch (direction)
+                {
+                    case Direction.NORTH: positionY++; break;
+                    case Direction.SOUTH: positionY--; break;
+                    case Direction.EAST: positionX++; break;
+                    case Direction.WEST: positionX--; break;
+                }
             }
 
             return new Result
