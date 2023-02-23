@@ -16,7 +16,7 @@ namespace codec_test
                 else
                     Console.WriteLine("Invalid input. Skipping ...");
 
-            Console.WriteLine($"Rover is now facing {direction}");
+            // Console.WriteLine($"Rover is now facing {direction}");
 
 
             //check whether moving forward will take rover off the map
