@@ -1,4 +1,5 @@
-# codec_test is a program that initializes a robot that will navigate on Mars terrain.
+# Mars Rover Navigation 
+ codec_test is a program that initializes a robot that will navigate on Mars terrain.
  The rover will initialize at position 1,1.
  Upon receiving dimensions the user should be able to insert a string of instructions.
  An example of an instruction sample would be "FFRFLFLF". Where: 
