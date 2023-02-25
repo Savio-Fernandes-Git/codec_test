@@ -9,7 +9,7 @@
 
 # Output:
  Output will print the final position of the rover along with its direction with the format "positionX,positionY,direction".
- Sample output for the given instruction sequence ("FFRFLFLF"): "1,4,WEST".
+ Sample output for the given instruction sequence FFRFLFLF: "1,4,WEST".
 
 # Requirements:
  .NET 6 or Replit (online compilation)
